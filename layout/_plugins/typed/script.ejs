@@ -1,7 +1,9 @@
 <script>
   function subtitleTyped(){
+    const sub = '<%- theme.cover.subtitle instanceof Array ? theme.cover.subtitle.join(';') : theme.cover.subtitle %>'
+    console.log(sub)
     window.subtitleTyped = new Typed('.cover-body .top .subtitle #subtitle', {
-      strings: new Array('<%- theme.cover.subtitle %>'),
+      strings: sub.split(';'),
       startDelay: <%- theme.plugins.typed.startDelay ? theme.plugins.typed.startDelay : 300 %>,
       typeSpeed: <%- theme.plugins.typed.typeSpeed ? theme.plugins.typed.typeSpeed : 150 %>,
       backSpeed: <%- theme.plugins.typed.backSpeed ? theme.plugins.typed.backSpeed : 50 %>,

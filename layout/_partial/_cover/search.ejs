@@ -8,7 +8,7 @@
     <% } %>
     <% if (theme.cover.subtitle) { %>
       <div class="subtitle">
-        <span id="subtitle"><%- theme.plugins.typed.enable ? '' : theme.cover.subtitle %></span>
+        <span id="subtitle"><%- theme.plugins.typed.enable ? '' : theme.cover.subtitle instanceof Array ? theme.cover.subtitle[0] : theme.cover.subtitle %></span>
       </div>
     <% } %>
   </div>
