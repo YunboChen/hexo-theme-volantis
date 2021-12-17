@@ -68,6 +68,13 @@
   <%_ } _%>
   <%- partial('../_plugins/end-of-support/script') %>
   <%- partial('scripts/global') %>
+  <%- partial('./darkmode', null, {cache: !config.relative_link}) %>
+  <% if (theme.plugins.typed.enable) { %>
+  <%- partial('../_plugins/typed/script') %>
+  <% } %>
+  <% if (theme.plugins.titleAnime.enable) { %>
+  <%- partial('../_plugins/titleAnime/script') %>
+  <% } %>
   <!-- Custom Files head begin-->
   <%- volantis_inject('head') %>
   <!-- Custom Files head end-->

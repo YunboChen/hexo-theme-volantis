@@ -1,0 +1,17 @@
+<script>
+  function subtitleTyped(){
+    window.subtitleTyped = new Typed('.cover-body .top .subtitle #subtitle', {
+      strings: new Array('<%- theme.cover.subtitle %>'),
+      startDelay: <%- theme.plugins.typed.startDelay ? theme.plugins.typed.startDelay : 300 %>,
+      typeSpeed: <%- theme.plugins.typed.typeSpeed ? theme.plugins.typed.typeSpeed : 150 %>,
+      backSpeed: <%- theme.plugins.typed.backSpeed ? theme.plugins.typed.backSpeed : 50 %>,
+      loop: <%- theme.plugins.typed.loop ? theme.plugins.typed.loop : false %>,
+    })
+  }
+  (async() => { 
+    await volantis.js("<%- theme.plugins.typed.js %>")
+    <% if(theme.cover.subtitle){ %>
+      subtitleTyped()
+    <%}%>
+  })()
+</script>
