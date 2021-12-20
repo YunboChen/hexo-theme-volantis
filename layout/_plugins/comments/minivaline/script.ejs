@@ -21,6 +21,18 @@
         }),
       pdata.commentConfig)
     );
+    fancybox_minivaline()
+  }
+  function fancybox_minivaline() {
+    if(typeof VolantisFancyBox === "undefined") {
+      const checkFancyBox = setInterval(() => {
+        if(typeof VolantisFancyBox === "undefined") return;
+        clearInterval(checkFancyBox);
+        VolantisFancyBox.bind('#minivaline_container .vcomment img');
+      })
+    } else {
+      VolantisFancyBox.bind('#minivaline_container .vcomment img');
+    }
   }
   load_minivaline();
   volantis.pjax.push(()=>{
